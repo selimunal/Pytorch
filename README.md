@@ -1,2 +1,2 @@
 # Pytorch
-This is my Pytorch files for deep learning practices.
+Deep learning models applied to databases using Pytorch 
