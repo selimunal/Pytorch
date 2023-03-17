@@ -308,7 +308,7 @@ class DQNAgent(object):
         self.model.save_weights(name)
 
 
-def play_one_episode(agent, enc, is_train):
+def play_one_episode(agent, env, is_train):
     #after transforming sates are already 1xD
 
     state=env.reset()
@@ -361,7 +361,7 @@ if __name__=='__main__':
     if args.mode=='test':
         #tehn load the previous scaler
         with open(f'{models_folder}/scaler.pkl','rb') as f:
-            scaler=pickle.load(f),'rb'
+            scaler=pickle.load(f)
 
         #remake the env with test data
         env=MultiStockEnv(test_data,initial_investment)
