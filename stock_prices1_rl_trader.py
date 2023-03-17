@@ -1,3 +1,7 @@
+## you need plot_rl_rewards.py file
+## run this with python3 rl_trader.py --m train
+## and this python3 rl_trader.py --m test
+
 import numpy as np
 import pandas as pd
 
@@ -376,6 +380,7 @@ if __name__=='__main__':
         val=play_one_episode(agent,env,args.mode)
         dt=datetime.now()-t0
         print(f'episode: {e+1}/{num_episodes}, esisode end value: {val:.2f},duration: {dt}')
+        portfolio_value.append(val) # append episode end portfolio value
 
     #save the weights when we are done
     if args.mode=='train':
